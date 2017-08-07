@@ -102,7 +102,7 @@ server.serve_forever()
 > 패딩이 없어 취약점이 존재하는 RSA 
 
 * $$m = m_1 * m_2 $$
-* $$m^d = m_1 + m_2 ^ d = m_1 ^ d * m_2 ^ d
+* $$m^d = (m_1 + m_2) ^ d = m_1 ^ d * m_2 ^ d
 $$
 
 > 접속을 하면 아래와 같은 메뉴가 나옵니다. 
@@ -138,25 +138,25 @@ msg = '\xff' + msg
 
 
 > 우리가 원하는 메시지는 'ticket:admin|root|' 입니다.
+
 사용하는 메시지를 아래와 같이 정의 합니다. 
 ~~~
 root = 'ticket:admin|root|'
 user = 'ticket:user|tyhan|%s' % alpha
 msg = '\xff' + msg
 ~~~
-root는 우리가 만들어야 하는 문자열
-user는 입력 가능한 포멧의 문자열 (alpha 가변)
-msg는 readable하지 않은 메시지의 서명
+
+* root는 우리가 만들어야 하는 문자열
+* user는 입력 가능한 포멧의 문자열 (alpha 가변)
+* msg는 readable하지 않은 메시지의 서명
 
 아래 조건을 만족하는 alpha를 만들어 냅니다.
 ~~~
 root / user = msg
 ~~~
 
-alpha를 변형하며 msg쪽의 \xff가 되는 것을 찾습니다.
-
-제가 찾은 메시지는 아래와 같습니다.
-
+* alpha를 변형하며 msg쪽의 \xff가 되는 것을 찾습니다.
+* 제가 찾은 메시지는 아래와 같습니다.
 ~~~
 user = ticket:user|tyhan|abrJC
 msg = ff452829fdb490a35102ed25b5052f29893e61e34d96edf72843aeb1c362cbebe4fb120cca8f985478ad44e483219ec1c65e85e65d672cd29c68b53bfc7ac9a6a5dddf51d9b88ceee29aa0e9d37ce1b5a5d8129634bcf43a4d9e55a9ae4750840f71834f3430acb38bc33d31677c160d22f8c71c5d481940ae3277a908e93778b7bd0d9db6051fb6ee41ccdd4c63cec3b595c75e30d7002c65454a1f738b4aab2966ec579084797b7e791ecee0d894a4fc01b49c2407c6c3a6cd9b13d7c156b17f6facaf6269888a36b666aecedbb119aa42984ef10bbc912e4013b65b59d4a1092a369aa93928a86ddcae06b8a778a3ad67e2ec4ccb6ca5040066b6e73626
@@ -173,8 +173,7 @@ Your ticket:
 7b7a9c274362234b92e330824c9335a0aa3262113b1657e9ca40205105a06c783de3c8612c256d7bed1c686374ee9df4d27cc20886f5bc7bd0eaa2d3a5dfb9e07f728a0d26cab68050bebb4adff952c430c4cd860c022672ff35719ec327c6591ef704f7ab2408d16b933842a56ba46f807a59cb7a443aadd082d58a15fd46188c94042a0a8efee2463de4ab4cdcf19ddd5eaa77adc6bf08714303ae05fa1b7dcd01b2276ac48d718b4c50bb7a359a1c39aae965c27c427101252d7742c44358b638d6d2905a390188ea8c36281a0aef91b603d650e860a75d8f8e4ffc511cafe9ec7818b05d70148a3d287c4c2ac33780affed4f00bb13e90a1788b3934788e
 ~~~
 
-* $$msg^d$$은 3번메뉴
-
+* $$msg^d$$은 3번 메뉴 (ff는 빼고 입력해줍니다.)
 ~~~
 Choice: 3
 Enter your message, hex encoded (i.e. 4142 for AB): 452829fdb490a35102ed25b5052f29893e61e34d96edf72843aeb1c362cbebe4fb120cca8f985478ad44e483219ec1c65e85e65d672cd29c68b53bfc7ac9a6a5dddf51d9b88ceee29aa0e9d37ce1b5a5d8129634bcf43a4d9e55a9ae4750840f71834f3430acb38bc33d31677c160d22f8c71c5d481940ae3277a908e93778b7bd0d9db6051fb6ee41ccdd4c63cec3b595c75e30d7002c65454a1f738b4aab2966ec579084797b7e791ecee0d894a4fc01b49c2407c6c3a6cd9b13d7c156b17f6facaf6269888a36b666aecedbb119aa42984ef10bbc912e4013b65b59d4a1092a369aa93928a86ddcae06b8a778a3ad67e2ec4ccb6ca5040066b6e73626
@@ -185,7 +184,7 @@ Your signature:
 * $$root^d$$은 $$user^d$$과 $$msg^d$$을 곱합니다
 
 
-$$root^d = user*msg^d = user^d * msg^d$$
+$$root^d = (user*msg)^d = user^d * msg^d$$
 
 
 > $$root^d$$을 입력하여 flag를 얻습니다.
