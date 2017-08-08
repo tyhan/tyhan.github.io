@@ -2,7 +2,7 @@
 layout: post
 title:  "Von Kanockers"
 date:   2017-08-08 01:00:00 +0900
-categories: CTF CRYPTO AES
+categories: CTF NETWORK PORTKNOCKING
 ---
 
 문제
