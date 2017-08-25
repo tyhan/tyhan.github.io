@@ -16,6 +16,8 @@ hack in the card I
 
 The progress of hacking was going well untill it got stuck, what we did so far is that as you can see the smartcard, an oscilloscope, a computer (act as the card reader) and a resistor are plugged into a circuit board. The circuit diagram is given as follows. 
 
+![circuitdiagram.png]({{ site.url }}/downloads/2017/hitb/HackInTheCardI/circuitdiagram.png)
+
 
  We finally managed to decrypt a crafted message and captured voltage variation(http://47.74.147.53:20015/index.html) of the resistor during the whole process. Now we are counting on you to do the rest... 
 
