@@ -42,7 +42,7 @@ simple side channel attack를 공부한다면 가장 먼저 배우는 내용
 
 ![index.html]({{ site.url }}/downloads/2017/hitb/HackInTheCardI/mult.png)
 
-위로 오른것을 보았을 때 긴것(squre and multiply)이 1 짧은것(squre)이 0이 된다.
+전력 소모량을 보았을 때 위에가 긴것(squre and multiply)이 1 짧은것(squre)이 0이 된다.
 스샷을 보았을때는 11001101... or ...10110011 (right to left, left to right).
 
 > index.html에 데이터를 가지고 전력량이 225.0를 위에서 아래로 내려 갈때를 확인하였으며, 그 index의 차이를 계산하였다.
@@ -76,7 +76,7 @@ for i in range(len(ilist)):
         None
 {% endhighlight %}
 
-이렇게 만든 string을 key로 하여 복호화 하였다.
+> 이렇게 만든 string을 key로 하여 복호화 하였다.
 
 {% highlight python %}
 
