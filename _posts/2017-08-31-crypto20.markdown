@@ -1,0 +1,30 @@
+---
+layout: post
+title:  "Crypto 20"
+date:   2017-08-31 02:00:00 +0900
+categories: bugsbunnyctf CTF CRYPTO BRAINFUCK
+---
+
+문제
+------
+
+Crypto-20
+20
+
+Decode the message !
+
+++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>----. >+++++++++++++++++. --------------. ++++++++++++. --------------------. <. >++++++++++++++++++++++. -------. . +++++++++++. ++. <. >---------. <--------------. ---. +++++++++++++++++++++++++++++. +++++++++++++++++. -------------------------. >+++. <<++++++++++++. . >>++++++++.
+
+풀이
+------
+
+> BF 문제이다.
+
+롤의 [B.F. 대검](https://namu.wiki/w/리그%20오브%20레전드/공격%20아이템#s-1.14)이 아닌, [Brute Foruce](https://en.wikipedia.org/wiki/Brute-force_attack)도 아닌 [Brain Fxxk](https://en.wikipedia.org/wiki/Brainfuck)!
+
+
+> 돌아다니는 아무 소스나 받아서 실행해 보았더니 플래그가 나왔다.
+
+[bf.py]({{site.url}}/downloads/2017/bugsbunnyctf/bf.py)
+
+Bugs_Bunny{Br41N_Fu**}

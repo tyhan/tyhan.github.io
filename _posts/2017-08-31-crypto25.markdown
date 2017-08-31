@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "Crypto 25"
+date:   2017-08-31 03:00:00 +0900
+categories: bugsbunnyctf CTF CRYPTO BRAINFUCK
+---
+
+문제
+------
+
+Crypto-25
+25
+
+Please give the flag !
+
+[crypto-25]({{site.url}}/downloads/2017/bugsbunnyctf/crypto-25)
+
+풀이
+------
+
+> ook ook!!!!!!!!
+
+검색을 하면 나온다. [ook](https://ko.wikipedia.org/wiki/Ook)
+
+> 결국 BF문제이다.
+
+사실상 crypto20 문제랑 같이 풀어서 같은 소스를 사용한다.
+
+[bf.py]({{site.url}}/downloads/2017/bugsbunnyctf/bf.py)
+
+Bugs_Bunny{Ju5T_OoK!}

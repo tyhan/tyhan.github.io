@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "Crypto 15"
+date:   2017-08-31 01:00:00 +0900
+categories: bugsbunnyctf CTF CRYPTO ROT13
+---
+
+문제
+------
+
+Crypto-15
+15
+
+Some classics crypto task ! Cesar maybe !!
+
+[crypto-15.txt]({{site.url}}/downloads/2017/bugsbunnyctf/crypto-15.txt)
+
+풀이
+------
+
+> 슬쩍 보니 파이선 소스이다. 다시보니 플래그 부분도 보인다. 친절히 두번 써줬다.
+
+{% highlight python %}
+04. # Synt : Cvht_Cvooz{D35bS_3OD0E3_4S3_O0U_T3DvS3_BU_4MM}
+...
+23. cevag qrpbqr("Cvht_Cvooz{D35bS_3OD0E3_4S3_O0U_T3DvS3_BU_4MM}",xrl)
+{% endhighlight %}
+
+> 시저중 가장 간단한 rot13을 해보았다.
+
+{% highlight python %}
+fr = open("crypto-15.txt", "r")
+fw = open("crypto-15.txt.py", "w")
+fw.write(fr.read().decode("rot13"))
+fr.close()
+fw.close()
+{% endhighlight %}
+
+> 13말고 다른거로 하지. 키가 나왔다.
+
+Piug_Pibbm{Q35oF_3BQ0R3_4F3_B0H_G3QiF3_OH_4ZZ}

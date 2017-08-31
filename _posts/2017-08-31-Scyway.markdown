@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "Scy way"
+date:   2017-08-31 06:00:00 +0900
+categories: bugsbunnyctf CTF CRYPTO Scy
+---
+
+문제
+------
+
+Scy way
+45
+
+Decrypt My Secret And Win!
+
+IHUDERMRCPESOLLANOEIHR
+
+Bugs_Bunny{flag}
+
+Author: TnMch
+
+
+풀이
+------
+
+> scy way 방식을 caesar box라고도 부르는것 같다.
+
+[Caesar box](http://www.wikihow.com/Decode-a-Caesar-Box-Code)
+
+> 해당 방식을 코딩을 하였다.
+
+키를 알지 못하여 우선 22글자이기 때문에 나누어지는 수인 2 와 11로 해보았다.
+
+{% highlight python %}
+text = "IHUDERMRCPESOLLANOEIHR"
+
+def scy(text, key):
+    result = ""
+    term = len(text)/key
+    for i in range(term):
+        for j in range(len(text)/term):
+            result += text[i+j*term]
+    return result
+    
+print len(text)
+factor = [2, 11]
+for i in factor:
+    print scy(text, i)
+{% endhighlight %}
+
+> 두개의 값이 나왔다. CIPHER라는 단어가 들어가있는것을 flag로 사용하였다.
+
+{% highlight python %}
+ISHOULDLEARNMORECIPHER
+IUEMCEOLNEHHDRRPSLAOIR
+{% endhighlight %}
+
+Bugs_Bunny{ISHOULDLEARNMORECIPHER}

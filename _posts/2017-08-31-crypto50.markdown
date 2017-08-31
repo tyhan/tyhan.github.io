@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "Crypto 50"
+date:   2017-08-31 04:00:00 +0900
+categories: bugsbunnyctf CTF CRYPTO BASE64
+---
+
+문제
+------
+
+Crypto-50
+50
+
+Decode ME faster !
+
+[enc.txt]({{site.url}}/downloads/2017/bugsbunnyctf/enc.txt)
+
+풀이
+------
+
+> base 64.....
+
+{% highlight python %}
+f = open("enc.txt")
+text = f.read()
+f.close()
+
+print text.decode("base64")
+
+{% endhighlight %}
+
+> 여러번 해보았다.
+
+{% highlight python %}
+print text.decode("base64")
+print text.decode("base64").decode("base64")
+print text.decode("base64").decode("base64").decode("base64")
+print text.decode("base64").decode("base64").decode("base64").decode("base64")
+{% endhighlight %}
+
+> 하다 못해 루프를 돌렸다.
+
+{% highlight python %}
+f = open("enc.txt")
+text = f.read()
+f.close()
+
+while(True):
+    try:
+        text = text.decode("base64")
+    except:
+        print text
+        break
+{% endhighlight %}
+
+> 바로 나와주었다. 다른곳이였으면 이것저것 decode 방식을 섞었을텐데..
+
+Bugs_Bunny{N0T_H4Rd_4T_4ll}
